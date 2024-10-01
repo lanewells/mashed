@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+#screen1 {
+    display: inherit;
+}
+#screen2 {
+    display: none;
+}
+
+body {
+    background: rgb(255, 245, 245);
+    background-repeat: no-repeat;
+    width: 50;
+    font-family: 'Montserrat';
+    position: relative;
+    margin: auto;
+    padding: 40px 5px 50px 5px;
+    
+}
+input {
+    border: 2px solid lightgray;
+    border-radius: 40px;
+    height: 35px;
+    padding: 0 11px;
+    font-size: 14px;
+    overflow: hidden;
+    background-color: white;
+  }
+      input:focus {
+          border: 2px solid blue;
+          outline: none;
+      }
+      ::placeholder {
+          color: rgb(163, 163, 163);
+          font-family: 'Montserrat';
+          font-size: 13px;
+      }
+
+.label {
+    line-height: 8px;
+    margin: 20px auto 10px auto;
+}
+
+.group, .field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    gap: 3px;
+}
+.row {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 7px;
+}
+#mash {
+    line-height: auto;
+    font-size: 48px;
+    letter-spacing: 30px;
+    margin: auto;
+}
+#magic-number {
+    font-size: 18px;
+    color: hotpink;
+}
+
+#dice {
+    max-width: 100px;
+    max-height: auto;
+}
+.button {
+    align-self: center;
+    background-color: #fff;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
+    font-size: 1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    font-family: 'Montserrat';
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    touch-action: manipulation;
+}
+    .button:active {
+        box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+        outline: 0;
+    }
+    .button:not([disabled]):active {
+        box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+        transform: translate(2px, 2px);
+    }
