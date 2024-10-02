@@ -1,5 +1,7 @@
 console.log('working')
 
+const screen1 = document.querySelector('#screen1')
+const screen2 = document.querySelector('#screen2')
 const magicNumber = document.querySelector('#magic-number')
 const rollDiceButton = document.querySelector('#roll-dice')
 const playAgainButton = document.querySelector('#play-again')
@@ -37,7 +39,6 @@ function rollDice() {
 }
 
 function predict(board, number) {
-    //disable roll dice button
     rollDiceButton.disabled = true
     if (board.length > 4) {
         let strike = ((number - 1) + currentIndex) % board.length
@@ -47,7 +48,6 @@ function predict(board, number) {
 
     }
     else if (board.length <= 4) {
-//
         place = board[0]
         career = board[1]
         partner = board[2]
