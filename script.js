@@ -1,6 +1,5 @@
 console.log('working')
 
-//global variables
 const magicNumber = document.querySelector('#magic-number')
 const rollDiceButton = document.querySelector('#roll-dice')
 const playAgainButton = document.querySelector('#play-again')
@@ -12,6 +11,11 @@ let board = []
 let currentIndex = 0
 let boardFull = false
 let number = 0
+
+let place = ""
+let career = ""
+let partner = ""
+let car = ""
 
 window.onload = function() {
     resetGame()
@@ -33,14 +37,25 @@ function rollDice() {
 }
 
 function predict(board, number) {
+    //disable roll dice button
+    rollDiceButton.disabled = true
     if (board.length > 4) {
         let strike = ((number - 1) + currentIndex) % board.length
         board.splice(strike, 1)
         currentIndex = strike
         predict(board, number)
+
     }
-    console.log(board)
+    else if (board.length <= 4) {
+//
+        place = board[0]
+        career = board[1]
+        partner = board[2]
+        car = board[3]
+        console.log(place)
+    }
 }
+
 
 function resetGame() {
     board = []
@@ -53,4 +68,3 @@ function resetGame() {
 playAgainButton.addEventListener('click', resetGame)
 rollDiceButton.addEventListener('click', rollDice)
 predictButton.addEventListener('click', () => predict(board, number))
-
