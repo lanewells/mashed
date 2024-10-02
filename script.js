@@ -27,6 +27,11 @@ function checkFull() {
     console.log(boardFull)
 }
 
+function rollDice() {
+    number = (Math.floor(Math.random() * 9) + 1)
+    magicNumber.textContent = number
+}
+
 function resetGame() {
     board = []
     number = 0
@@ -34,14 +39,12 @@ function resetGame() {
     screen2.style.display = 'none'
 }
 
-
-
 playAgainButton.addEventListener('click', resetGame)
+rollDiceButton.addEventListener('click', rollDice)
 
-//function: check if board full
+
 //function: roll dice
 //function: predict game
 
 //eventlistener: predict button - predict game
-//event listener: each input field - check if full
 //event listener: roll dice button - roll dice 
