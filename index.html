@@ -1,76 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/style.css" type="text/css" />
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Mashed</title>
 </head>
 <body>
-    
-    <header>
-        <h1>MASH</h1>
+
+    <header class="group">
+        <h1 id="mash">MASH</h1>
     </header>
 
-<div class="screen1">
-    <div>
-        <h2 class="label">Location</h2>
-        <div>
-            <input type="text" class="field location" placeholder="Paris, France">
-            <input type="text" class="field location" placeholder="Type a place">
-            <input type="text" class="field location" placeholder="Type a place">
-            <input type="text" class="field location" placeholder="Type a place">
+<div id="screen1" class="group">
+    <div class="row">
+    <div class="group">
+        <h3 class="label">Location</h3>
+        <div class="field">
+            <input id="f0" type="text" class="input location" placeholder="Type a place">
+            <input id="f1" type="text" class="input location" placeholder="Paris, France">
+            <input id="f2" type="text" class="input location" placeholder="Type a place">
+            <input id="f3" type="text" class="input location" placeholder="Type a place">
         </div>
     </div>
-    <div>
-        <h2 class="label">Career</h2>
-        <div>
-            <input type="text" class="field career" placeholder="Dog groomer">
-            <input type="text" class="field career" placeholder="Type a profession">
-            <input type="text" class="field career" placeholder="Type a profession">
-            <input type="text" class="field career" placeholder="Type a profession">
+    <div class="group">
+        <h3 class="label">Career</h3>
+        <div class="field">
+            <input id="f4" type="text" class="input career" placeholder="Dog groomer">
+            <input id="f5" type="text" class="input career" placeholder="Type a profession">
+            <input id="f6" type="text" class="input career" placeholder="Type a profession">
+            <input id="f7" type="text" class="input career" placeholder="Type a profession">
         </div>
     </div>
-    <div>
-        <h2 class="label">Partner</h2>
-        <div>
-            <input type="text" class="field partner" placeholder="Rajulio">
-            <input type="text" class="field partner" placeholder="Type a name">
-            <input type="text" class="field partner" placeholder="Type a name">
-            <input type="text" class="field partner" placeholder="Type a name">
+</div>
+<div class="row">
+    <div class="group">
+        <h3 class="label">Partner</h3>
+        <div class="field">
+            <input id="f8" type="text" class="input partner" placeholder="Rajulio">
+            <input id="f9" type="text" class="input partner" placeholder="Type a name">
+            <input id="f10" type="text" class="input partner" placeholder="Type a name">
+            <input id="f11" type="text" class="input partner" placeholder="Type a name">
         </div>
     </div>
-    <div>
-        <h2 class="label">Car</h2>
-        <div>
-            <input type="text" class="field car" placeholder="Kia Rio">
-            <input type="text" class="field car" placeholder="Type a vehicle name">
-            <input type="text" class="field car" placeholder="Type a vehicle name">
-            <input type="text" class="field car" placeholder="Type a vehicle name">
+    <div class="group">
+        <h3 class="label">Car</h3>
+        <div class="field">
+            <input id="f12" type="text" class="input car" placeholder="Kia Rio">
+            <input id="f13" type="text" class="input car" placeholder="Type a vehicle name">
+            <input id="f14" type="text" class="input car" placeholder="Type a vehicle name">
+            <input id="f15" type="text" class="input car" placeholder="Type a vehicle name">
         </div>
     </div>
-    <div>
+</div>
+    <div class="group">
         <p class="magic-number">Your magic number is</p>
-        <h1 id="magic-number" class="magic-number"></h1>
-        <img src="/assets/dice.png">
+        <h1 id="magic-number" class="magic-number">5</h1>
+        <img id="dice" src="/assets/dice.png">
     </div>
-    <div class="button-container">
-        <button id="roll-dice" class="button">Roll the dice</button>
-        <button id="predict" class="button">Predict</button>
-    </div>
-</div>
-
-<div class="screen2">
-    <div>
-        <h1 class="label">Your future is...</h1>
-        <h2 id="prediction">"After graduating from school to become an Engineer, you accept a job offer in Seattle, Washington and begin your career.
-            <br>There, you marry your best friend Patricia and buy a mansion together.
-            <br>You love your life, and you and Patricia drive the Mini Cooper off into the sunset.</h2>
-    </div>
-    <div class="button-container"></div>
-        <button id="play-again" class="button">Play again</button>
+    <div class="group button-container">
+        <button id="roll-dice" class="button">ROLL THE DICE</button>
+        <button id="predict" class="button">PREDICT</button>
     </div>
 </div>
 
+<div id="screen2" class="group">
+    <div class="group">
+        <h2 class="label">Your future is...</h2>
+        <h3 id="prediction-text"></h3>
+    </div>
+    <div class="group button-container"></div>
+        <button id="play-again" class="button">PLAY AGAIN</button>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
