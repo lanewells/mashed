@@ -13,9 +13,20 @@ let field = false
 let boardFull = false
 let number = 0
 
+window.onload = function() {
+    resetGame()
+}
 
 //reset game function upon game loading
 
+function resetGame() {
+    board = []
+    number = 0
+    screen1.style.display = 'inherit'
+    screen2.style.display = 'none'
+}
+
+playAgainButton.addEventListener('click', resetGame)
 
 //function: check if board full
 //function: roll dice
