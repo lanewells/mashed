@@ -18,6 +18,7 @@ let place = ""
 let career = ""
 let partner = ""
 let car = ""
+let home = ""
 
 window.onload = function() {
     resetGame()
@@ -41,22 +42,23 @@ function rollDice() {
 
 function predict(board, number) {
     rollDiceButton.disabled = true
-    if (board.length > 4) {
+    board.unshift('Mansion', 'Apartment', 'Shack', 'House')
+    if (board.length > 5) {
         let strike = ((number - 1) + currentIndex) % board.length
         board.splice(strike, 1)
         currentIndex = strike
         predict(board, number)
 
     }
-    else if (board.length <= 4) {
-        place = board[0]
-        career = board[1]
-        partner = board[2]
-        car = board[3]
-        console.log(place)
+    else if (board.length <= 5) {
+        home = board[0]
+        place = board[1]
+        career = board[2]
+        partner = board[3]
+        car = board[4]
+        console.log(board)
     }
 }
-
 
 function resetGame() {
     board = []
