@@ -9,7 +9,7 @@ const predictionText = document.querySelector('#prediction-text')
 
 let inputElements = document.querySelectorAll('.input')
 let board = []
-let field = false
+let currentIndex = 0
 let boardFull = false
 let number = 0
 
@@ -32,6 +32,16 @@ function rollDice() {
     magicNumber.textContent = number
 }
 
+function predict(board, number) {
+    if (board.length > 4) {
+        let strike = ((number - 1) + currentIndex) % board.length
+        board.splice(strike, 1)
+        currentIndex = strike
+        predict(board, number)
+    }
+    console.log(board)
+}
+
 function resetGame() {
     board = []
     number = 0
@@ -43,8 +53,6 @@ playAgainButton.addEventListener('click', resetGame)
 rollDiceButton.addEventListener('click', rollDice)
 
 
-//function: roll dice
 //function: predict game
 
 //eventlistener: predict button - predict game
-//event listener: roll dice button - roll dice 
