@@ -17,7 +17,15 @@ window.onload = function() {
     resetGame()
 }
 
-//reset game function upon game loading
+inputElements.forEach(element => {
+    element.addEventListener('input', checkFull)
+})
+
+function checkFull() {
+    board = [...inputElements].map(element => element.value)
+    boardFull = board.every(value => value.trim() !== "")
+    console.log(boardFull)
+}
 
 function resetGame() {
     board = []
@@ -26,14 +34,14 @@ function resetGame() {
     screen2.style.display = 'none'
 }
 
+
+
 playAgainButton.addEventListener('click', resetGame)
 
 //function: check if board full
 //function: roll dice
 //function: predict game
-//function: reset game
 
 //eventlistener: predict button - predict game
 //event listener: each input field - check if full
 //event listener: roll dice button - roll dice 
-//event listener: play again - reset game
