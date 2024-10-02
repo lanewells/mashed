@@ -41,14 +41,15 @@ function rollDice() {
 }
 
 function predict(board, number) {
-    rollDiceButton.disabled = true
-    board.unshift('Mansion', 'Apartment', 'Shack', 'House')
+    if (currentIndex === 0) {
+        rollDiceButton.disabled = true
+        board.unshift('mansion', 'apartment', 'shack', 'house')
+    }
     if (board.length > 5) {
         let strike = ((number - 1) + currentIndex) % board.length
         board.splice(strike, 1)
         currentIndex = strike
         predict(board, number)
-
     }
     else if (board.length <= 5) {
         home = board[0]
