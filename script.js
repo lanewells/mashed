@@ -45,14 +45,12 @@ function predict(board, number) {
 function resetGame() {
     board = []
     number = 0
+    currentIndex = 0
     screen1.style.display = 'inherit'
     screen2.style.display = 'none'
 }
 
 playAgainButton.addEventListener('click', resetGame)
 rollDiceButton.addEventListener('click', rollDice)
+predictButton.addEventListener('click', () => predict(board, number))
 
-
-//function: predict game
-
-//eventlistener: predict button - predict game
