@@ -36,6 +36,7 @@ function checkFull() {
 function rollDice() {
     number = (Math.floor(Math.random() * 9) + 1)
     magicNumber.textContent = number
+    predictButton.disabled = false
 }
 
 function predict(board, number) {
@@ -61,6 +62,8 @@ function resetGame() {
     board = []
     number = 0
     currentIndex = 0
+    rollDiceButton.disabled = false
+    predictButton.disabled = true
     screen1.style.display = 'inherit'
     screen2.style.display = 'none'
 }
