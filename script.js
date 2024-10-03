@@ -10,18 +10,12 @@ const predictionText = document.querySelector('#prediction-text')
 
 let inputElements = document.querySelectorAll('.input')
 let board = []
-let currentIndex = 0
 let boardFull = false
 let number = 0
 
-let place = ""
-let career = ""
-let partner = ""
-let car = ""
-let home = ""
-
 window.onload = function() {
     resetGame()
+    console.log("game is reset")
 }
 
 inputElements.forEach(element => {
@@ -31,33 +25,38 @@ inputElements.forEach(element => {
 function checkFull() {
     board = [...inputElements].map(element => element.value)
     boardFull = board.every(value => value.trim() !== "")
-    console.log(boardFull)
+    console.log(`board is full: ${boardFull}`)
 }
 
 function rollDice() {
     number = (Math.floor(Math.random() * 9) + 1)
     magicNumber.textContent = number
     predictButton.disabled = false
+    console.log(`the magic number is: ${number}`)
 }
 
-function predict(board, number) {
+function predict() {
+    rollDiceButton.disabled = true
+    board.unshift('mansion', 'apartment', 'shack', 'house')
+    console.log(`current board is: ${board}`)
+    let currentIndex = 0
+
     if (currentIndex === 0) {
-        rollDiceButton.disabled = true
-        board.unshift('mansion', 'apartment', 'shack', 'house')
+        console.log("current index is 0")
     }
-    if (board.length > 5) {
-        let strike = ((number - 1) + currentIndex) % board.length
-        board.splice(strike, 1)
-        currentIndex = strike
-        predict(board, number)
+
+    while (board.length > 5) {
+
+        let strike = (currentIndex + (number - 1)) % board.length;
+        let item = board[strike]
+        console.log(`striking at this index: ${strike} this item: ${item}`);
+        
+        board.splice(strike, 1);
+        currentIndex = strike;
     }
-    else if (board.length <= 5) {
-        home = board[0]
-        place = board[1]
-        career = board[2]
-        partner = board[3]
-        car = board[4]
-        console.log(board)
+
+    if (board.length <= 5) {
+        console.log(board);
     }
 }
 

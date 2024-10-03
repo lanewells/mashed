@@ -4,7 +4,9 @@
     display: inherit;
 }
 #screen2 {
-    display: none;
+    display: inherit;
+    margin: 80px auto;
+    line-height: 30px;
 }
 
 body {
