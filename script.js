@@ -29,7 +29,7 @@ function checkFull() {
 }
 
 function rollDice() {
-    number = (Math.floor(Math.random() * 6) + 1)
+    number = (Math.floor(Math.random() * 12) + 1)
     magicNumber.textContent = number
     predictButton.disabled = false
     console.log(`the magic number is: ${number}`)
@@ -38,7 +38,7 @@ function rollDice() {
 function predict() {
     rollDiceButton.disabled = true
 
-    const home = ['mansion', 'apartment', 'shack', 'house'] 
+    const home = ['mansion', 'apartment', 'shack', 'house']
     const place = board.slice(0, 4)
     const career = board.slice(4, 8)
     const partner = board.slice(8, 12)
@@ -51,39 +51,44 @@ function predict() {
 
     while (categories.some(category => category.length > 1)) {
         let flatBoard = categories.flat()
-
         let strike = (currentIndex + (number - 1)) % flatBoard.length
 
         let totalLength = 0
-        let categoryToStrike 
+        let categoryToStrike = null
+
         for (let i = 0; i < categories.length; i++) {
             totalLength += categories[i].length
             if (strike < totalLength) {
-                categoryToStrike = i
-                break
+                if (categories[i].length > 1) {
+                    categoryToStrike = i
+                    break
             }
         }
-        
-        if (categories[categoryToStrike].length > 1) {
+    }
+
+        if (categoryToStrike !== null) {
             let relativeStrike = strike - (totalLength - categories[categoryToStrike].length)
             let item = categories[categoryToStrike].splice(relativeStrike, 1)
-            console.log(`striking from category${categoryToStrike}, removing:${item}`)
+            console.log(`striking from category ${categoryToStrike}, removing: ${item}`)
         }
 
+        flatBoard = categories.flat()
         currentIndex = strike % flatBoard.length
     }
-        let finalValues = categories.map(category => category[0])
-        console.log("final values from each category:", finalValues)
-        
-        // const finalHome = finalValues[0]
-        // const finalPlace = finalValues[1]
-        // const finalCareer = finalValues[2]
-        // const finalPartner = finalValues[3]
-        // const finalCar = finalValues[4]
 
-        // screen1.style.display = 'none'
-        // screen2.style.display = 'inherit'
-        // predictionText.textContent = `After graduating from school to become a ${finalCareer}, you accept a job offer in ${finalPlace} and begin your career.  There, you marry your best friend ${finalPartner} and buy a ${finalHome} together.  You love your life, and you and ${finalPartner} drive the ${finalCar} off into the sunset.`
+    let finalValues = categories.map(category => category[0])
+    console.log("final values from each category:", finalValues)
+
+    const finalHome = finalValues[0]
+    const finalPlace = finalValues[1]
+    const finalCareer = finalValues[2]
+    const finalPartner = finalValues[3]
+    const finalCar = finalValues[4]
+    console.log(finalHome, finalPlace, finalCareer, finalPartner, finalCar)
+
+    // screen1.style.display = 'none'
+    // screen2.style.display = 'inherit'
+    // predictionText.textContent = `After graduating from school to become a ${finalCareer}, you accept a job offer in ${finalPlace} and begin your career. There, you marry your best friend ${finalPartner} and buy a ${finalHome} together. You love your life, and you and ${finalPartner} drive the ${finalCar} off into the sunset.`
 }
 
 
