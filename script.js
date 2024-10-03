@@ -37,28 +37,55 @@ function rollDice() {
 
 function predict() {
     rollDiceButton.disabled = true
-    board.unshift('mansion', 'apartment', 'shack', 'house')
-    console.log(`current board is: ${board}`)
+
+    const home = ['mansion', 'apartment', 'shack', 'house'] 
+    const place = board.slice(0, 4)
+    const career = board.slice(4, 8)
+    const partner = board.slice(8, 12)
+    const car = board.slice(12, 16)
+
+    const categories = [home, place, career, partner, car]
+
     let currentIndex = 0
+    console.log("Initial categories:", categories)
 
-    if (currentIndex === 0) {
-        console.log("current index is 0")
-    }
+    while (categories.some(category => category.length > 1)) {
+        let flatBoard = categories.flat()
 
-    while (board.length > 5) {
+        let strike = (currentIndex + (number - 1)) % flatBoard.length
 
-        let strike = (currentIndex + (number - 1)) % board.length;
-        let item = board[strike]
-        console.log(`striking at this index: ${strike} this item: ${item}`);
+        let totalLength = 0
+        let categoryToStrike 
+        for (let i = 0; i < categories.length; i++) {
+            totalLength += categories[i].length
+            if (strike < totalLength) {
+                categoryToStrike = i
+                break
+            }
+        }
         
-        board.splice(strike, 1);
-        currentIndex = strike;
-    }
+        if (categories[categoryToStrike].length > 1) {
+            let relativeStrike = strike - (totalLength - categories[categoryToStrike].length)
+            let item = categories[categoryToStrike].splice(relativeStrike, 1)
+            console.log(`striking from category${categoryToStrike}, removing:${item}`)
+        }
 
-    if (board.length <= 5) {
-        console.log(board);
+        currentIndex = strike % flatBoard.length
     }
+        let finalValues = categories.map(category => category[0])
+        console.log("final values from each category:", finalValues)
+        
+        // const finalHome = finalValues[0]
+        // const finalPlace = finalValues[1]
+        // const finalCareer = finalValues[2]
+        // const finalPartner = finalValues[3]
+        // const finalCar = finalValues[4]
+
+        // screen1.style.display = 'none'
+        // screen2.style.display = 'inherit'
+        // predictionText.textContent = `After graduating from school to become a ${finalCareer}, you accept a job offer in ${finalPlace} and begin your career.  There, you marry your best friend ${finalPartner} and buy a ${finalHome} together.  You love your life, and you and ${finalPartner} drive the ${finalCar} off into the sunset.`
 }
+
 
 function resetGame() {
     board = []
@@ -72,4 +99,4 @@ function resetGame() {
 
 playAgainButton.addEventListener('click', resetGame)
 rollDiceButton.addEventListener('click', rollDice)
-predictButton.addEventListener('click', () => predict(board, number))
+predictButton.addEventListener('click', () => predict())
