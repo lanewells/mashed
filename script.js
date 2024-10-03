@@ -29,7 +29,7 @@ function checkFull() {
 }
 
 function rollDice() {
-    number = (Math.floor(Math.random() * 9) + 1)
+    number = (Math.floor(Math.random() * 6) + 1)
     magicNumber.textContent = number
     predictButton.disabled = false
     console.log(`the magic number is: ${number}`)
