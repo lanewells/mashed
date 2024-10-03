@@ -29,7 +29,7 @@ input {
     background-color: white;
   }
       input:focus {
-          border: 2px solid blue;
+          border: 2px solid rgb(76, 0, 255);
           outline: none;
       }
       ::placeholder {
@@ -64,7 +64,7 @@ input {
 }
 #magic-number {
     font-size: 18px;
-    color: hotpink;
+    color: rgb(255, 0, 174);
 }
 
 #dice {
