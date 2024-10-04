@@ -1,9 +1,10 @@
 ### LANE WELLS
-[Mashed](https://mashed.surge.sh/)
+
+# MASHED
+[Play Mashed](https://mashed.surge.sh/)
 
 ![Paper Game](https://birminghammomcollective.com/wp-content/uploads/2020/02/86453559_603831930460614_1250635038542790656_n.jpg)
 
-# MASHED
 #### Sleepovers, long phone calls on your parents' landline, giggling with your bffs at recess. Revisit that sweet time when the only taxes you paid were with Monopoly money, with MASHED!
 
 ## Game Overview
@@ -18,10 +19,10 @@ This game is based on a legendary schoolyard game called MASH, in which players 
   - Tell a story with your remaining values from each category.
 
 ## Demo
-[Landscape](/assets/Screenshot1.png)
-[Landscape2](/assets/Screenshot3.png)
-[Landscape3](/assets/Screenshot4.png)
-[Landscape4](/assets/Screenshot2.png)
+![Landscape](/assets/Screenshot1.png)
+![Landscape2](/assets/Screenshot3.png)
+![Landscape3](/assets/Screenshot4.png)
+![Landscape4](/assets/Screenshot2.png)
 
 ## Mobile
 I used flexbox displays in CSS for responsiveness to different screen sizes and to adapt for mobile gameplay.
@@ -40,23 +41,24 @@ I used flexbox displays in CSS for responsiveness to different screen sizes and 
     gap: 7px;
 }
 ```
-[Mobile](/assets/Mobile1.png)
+![Mobile](/assets/Mobile1.png)
 
 The Roll Dice button is disabled until all input fields have been typed in by user.
 
-[Mobile2](/assets/Mobile2.png)
+![Mobile2](/assets/Mobile2.png)
 
 The Predict button is only enabled once the Roll Dice button has been clicked and generated a magic number.
 
-[Mobile3](/assets/Mobile3.png)
+![Mobile3](/assets/Mobile3.png)
 
 ## Wireframes
 #### Miro as a wireframing platform
-[Wireframe1](/assets/Wireframes1.png)
+![Wireframe1](/assets/Wireframes1.png)
 
-[Wireframe2](/assets/Wireframes2.png)
+![Wireframe2](/assets/Wireframes2.png)
+
 #### Mapping & pseudocoding the game logic
-[Map](/assets/Map.png)
+![Map](/assets/Map.png)
 
 ### Other Notes
 I was able to use a specific font family via Google Fonts through importing to my CSS file.
