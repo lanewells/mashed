@@ -19,9 +19,39 @@ This game is based on a legendary schoolyard game called MASH, in which players 
   - Tell a story with your remaining values from each category.
 
 ## Demo
+User fills out 16 fields and rolls dice. Roll dice function generates a pseudorandom innteger between 1 and 2, inclusive.
+```js
+function rollDice() {
+    number = (Math.floor(Math.random() * 12) + 1)
+    magicNumber.textContent = number
+    predictButton.disabled = false
+}
+```
 ![Landscape](/assets/Screenshot1.png)
+Predict function begins sequence of removing values from nested arrays
 ![Landscape2](/assets/Screenshot3.png)
+```js
+function predict() {
+  ///lines 38-79
+```
 ![Landscape3](/assets/Screenshot4.png)
+New screen appears through DOM changing the values of display properties of divs, which are assigned id values of '#screen1' and '#screen2'.
+```html
+<div id="screen2" class="group">
+```
+```css
+#screen2 {
+    display: inherit;
+    margin: 80px auto;
+    line-height: 30px;
+}
+```
+```js
+function showScreen2() {
+    screen1.style.display = 'none'
+    screen2.style.display = 'flex'
+}
+```
 ![Landscape4](/assets/Screenshot2.png)
 
 ## Mobile
@@ -41,11 +71,9 @@ I used flexbox displays in CSS for responsiveness to different screen sizes and 
     gap: 7px;
 }
 ```
-![Mobile](/assets/Mobile1.png)
+![Mobile](/assets/Mobile1.png)  ![Mobile2](/assets/Mobile2.png)
 
 The Roll Dice button is disabled until all input fields have been typed in by user.
-
-![Mobile2](/assets/Mobile2.png)
 
 The Predict button is only enabled once the Roll Dice button has been clicked and generated a magic number.
 
