@@ -29,11 +29,12 @@ function rollDice() {
 ```
 ![Landscape](/assets/Screenshot1.png)
 Predict function begins sequence of removing values from nested arrays
-![Landscape2](/assets/Screenshot3.png)
 ```js
 function predict() {
   ///lines 38-79
 ```
+![Landscape2](/assets/Screenshot3.png)
+
 ![Landscape3](/assets/Screenshot4.png)
 New screen appears through DOM changing the values of display properties of divs, which are assigned id values of '#screen1' and '#screen2'.
 ```html
@@ -71,13 +72,15 @@ I used flexbox displays in CSS for responsiveness to different screen sizes and 
     gap: 7px;
 }
 ```
-![Mobile](/assets/Mobile1.png)  ![Mobile2](/assets/Mobile2.png)
+![Mobile](/assets/Mobile1.png){width=300}
 
 The Roll Dice button is disabled until all input fields have been typed in by user.
 
+![Mobile2](/assets/Mobile2.png){width=300}
+
 The Predict button is only enabled once the Roll Dice button has been clicked and generated a magic number.
 
-![Mobile3](/assets/Mobile3.png)
+![Mobile3](/assets/Mobile3.png){width=300}
 
 ## Wireframes
 #### Miro as a wireframing platform
@@ -89,7 +92,7 @@ The Predict button is only enabled once the Roll Dice button has been clicked an
 ![Map](/assets/Map.png)
 
 ### Other Notes
-I was able to use a specific font family via Google Fonts through importing to my CSS file.
+I used a specific font family via Google Fonts through importing to my CSS file.
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 ```
