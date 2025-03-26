@@ -3,6 +3,7 @@
 #screen1 {
     display: inherit;
 }
+
 #screen2 {
     display: inherit;
     margin: 80px auto;
@@ -12,35 +13,49 @@
 body {
     background: rgb(255, 245, 245);
     background-repeat: no-repeat;
-    width: 50;
-    font-family: 'Montserrat';
-    position: relative;
-    margin: auto;
-    padding: 40px 5px 50px 5px;
-    
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 14px;
+}
+
+#prediction-text {
+    font-weight: normal;
+    font-size: 16px;
 }
 input {
     border: 2px solid lightgray;
     border-radius: 40px;
     height: 35px;
-    padding: 0 11px;
+    padding: 0px 11px;
+    width: 200px;
+    max-width: 90vw;
     font-size: 14px;
     overflow: hidden;
     background-color: white;
-  }
-      input:focus {
-          border: 2px solid rgb(76, 0, 255);
-          outline: none;
-      }
-      ::placeholder {
-          color: rgb(163, 163, 163);
-          font-family: 'Montserrat';
-          font-size: 13px;
-      }
+}
+
+input:focus {
+    border: 2px solid rgb(76, 0, 255);
+    outline: none;
+}
+
+::placeholder {
+    color: rgb(163, 163, 163);
+    font-family: 'Montserrat';
+    font-size: 14px;
+}
 
 .label {
-    line-height: 8px;
-    margin: 20px auto 10px auto;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0 auto 5px auto;
 }
 
 .group, .field {
@@ -48,31 +63,56 @@ input {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: auto;
     gap: 3px;
 }
+
 .row {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
-    gap: 7px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
 }
+
 #mash {
     line-height: auto;
-    font-size: 48px;
-    letter-spacing: 30px;
-    margin: auto;
+    margin: 10px auto 20px auto;
+    text-align: center;
+    font-size: clamp(24px, 8vw, 40px);
+    letter-spacing: 0.5em; 
 }
+
+.magic-number {
+    margin-top: 0;
+}
+
 #magic-number {
     font-size: 18px;
     color: rgb(255, 0, 174);
+    height: 16px;
 }
 
 #dice {
-    max-width: 100px;
+    max-width: 70px;
     max-height: auto;
 }
+
+.button-container {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+#screen2 .button-container {
+    margin-top: 40px;
+}
+
 .button {
     align-self: center;
+    width: 150px;
+    max-width: 100%;
     background-color: #fff;
     background-size: 4px 3px;
     border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
@@ -80,11 +120,9 @@ input {
     border-width: 2px;
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
     box-sizing: border-box;
-    color: #41403e;
-    font-size: 1rem;
-    line-height: 23px;
+    font-size: 0.75rem;
     outline: none;
-    padding: .75rem;
+    padding: .7rem;
     font-family: 'Montserrat';
     transition: all 235ms ease-in-out;
     border-bottom-left-radius: 15px 255px;
@@ -93,11 +131,27 @@ input {
     border-top-right-radius: 15px 225px;
     touch-action: manipulation;
 }
-    .button:active {
-        box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
-        outline: 0;
+
+.button:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+}
+
+.button:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+}
+
+@media (max-width: 480px) {
+    input {
+        width: 100%;
     }
-    .button:not([disabled]):active {
-        box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-        transform: translate(2px, 2px);
+
+    .label {
+        font-size: 14px;
     }
+
+    #mash {
+        letter-spacing: 0.1em;
+    }
+}
